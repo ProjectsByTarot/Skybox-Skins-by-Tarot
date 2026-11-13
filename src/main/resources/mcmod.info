@@ -1,0 +1,10 @@
+[
+  {
+    "modid": "skyboxskins",
+    "name": "Skybox Skins by Tarot",
+    "description": "This mod changes player skins to use a configurable skybox.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "clientSideOnly": true
+  }
+]

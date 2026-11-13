@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'Forge'
+            url = 'https://maven.minecraftforge.net/'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+
+repositories {
+    maven {
+        url = 'https://repo.polyfrost.org/releases'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = '1.0.13'
+group = 'dev.projectsbytarot.skyboxskins'
+archivesBaseName = 'skybox-skins-by-tarot'
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+configurations {
+    oneconfigWrapper
+}
+
+dependencies {
+    compileOnly 'cc.polyfrost:oneconfig-1.8.9-forge:0.2.2-alpha230'
+    oneconfigWrapper 'cc.polyfrost:oneconfig-wrapper-launchwrapper:1.0.0-beta17'
+}
+
+minecraft {
+    version = '1.8.9-11.15.1.2318-1.8.9'
+    mappings = 'stable_22'
+    runDir = 'run'
+}
+
+jar {
+    from {
+        configurations.oneconfigWrapper.collect { zipTree(it) }
+    }
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA'
+    manifest {
+        attributes(
+                'ModSide': 'CLIENT',
+                'TweakOrder': '0',
+                'ForceLoadAsMod': 'true',
+                'TweakClass': 'cc.polyfrost.oneconfig.loader.stage0.LaunchWrapperTweaker'
+        )
+    }
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

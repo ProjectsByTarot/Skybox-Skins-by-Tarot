@@ -1,0 +1,16 @@
+Symbol range map extraction starting
+Processing 14 files
+processing dev\projectsbytarot\skyboxskins\SkyboxSkins.java
+processing dev\projectsbytarot\skyboxskins\client\PlayerRulesTableOption.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxClientHandler.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxConfig.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxFilePickerScreen.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxIds.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxLibraryTableOption.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxOneConfig.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxPlayerModel.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxShader.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxSkinsCommand.java
+processing dev\projectsbytarot\skyboxskins\client\SkyboxTextures.java
+processing dev\projectsbytarot\skyboxskins\proxy\ClientProxy.java
+processing dev\projectsbytarot\skyboxskins\proxy\CommonProxy.java
